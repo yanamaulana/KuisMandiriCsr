@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<meta charset="ISO-8859-1">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>CSR Plan Manager</title>
+  </head>
+  <body class="bg-light">
+  
+  <div align="center" class="container-fluid">
+  				<div class="alert alert-primary" role="alert">
+  				<h3 class="display-4"> Mandiri Social Responsibilities </h3>
+				</div>
+ 			 </div>
+ 			 
+ 			 <div class="container">
+ 			 <div class="row">
+ 			 <div class="col-lg-5">
+  				<a href="new" class="btn btn-primary">Create new Plan</a>
+  				</div>
+ 			 </div>
+ 			 </div>
+    
+    <div class="container mt-2">
+    	<div class="row">
+    		<div class="col-lg align-content-center text-center justify-content-center">
+  <table class="table table-hover table-bordered">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">NO</th>
+      <th scope="col">Name</th>
+      <th scope="col">Category</th>
+      <th scope="col">Location</th>
+      <th scope="col">Date</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr th:each="csr : ${listCsrs}">
+      <td th:text="${csr.id}">ID</td>
+      <td th:text="${csr.name}">Name</td>
+      <td th:text="${csr.category}">Category</td>
+      <td th:text="${csr.location}">Location</td>
+      <td th:text="${csr.plan_date}">Date </td>
+      <td>
+       <a th:href="@{'/edit/' + ${csr.id}}" class="badge badge-warning">Edit</a>
+      &nbsp;&nbsp;&nbsp;
+      <a th:href="@{'/delete/' + ${csr.id}}" class="badge badge-danger" onclick="return confirm ('Are you sure to delete the plan ?')" >Delete</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+    	</div>
+    		</div>
+
+  </body>
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</html>

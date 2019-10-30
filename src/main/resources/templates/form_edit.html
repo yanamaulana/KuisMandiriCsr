@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+    <meta charset="ISO-8859-1">
+    <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>CSR Plan Manager</title>
+  </head>
+  <body class="bg-light">
+    
+ 			 <div align="center" class="container-fluid">
+  				<div class="alert alert-primary" role="alert">
+  				<h3 class="display-4"> Mandiri Social Responsibilities </h3>
+				</div>
+ 			 </div>
+ 			 
+<div class="container-fluid">
+	<div class="container">
+		<form action="#" th:action="@{/save}" th:object="${csr}" method="post">
+			<div class="modal-body">
+						<input type="hidden" th:field="*{id}" class="form-control" readonly="readonly"/>
+				<div class="form-group row">
+					<label for="name" class="col-sm-2 col-form-label display-1 mt-2">Name of Plan</label>
+					<div class="col-sm-10 mt-3">
+						<input type="text" th:field="*{name}" class="form-control" required autocomplete="off"/>
+					</div>					
+				</div>
+				<div class="form-group row">
+					<label for="category" class="col-sm-2 col-form-label display-1 mt-2">Category</label>
+					<div class="col-sm-10 mt-3">
+						<select type="text" th:field="*{category}" class="form-control" placeholder="Category...." required>
+						<option value="">Select Plan Category.....</option>
+						<option value="Even Ogranization">Event Organization</option>
+						<option value="Sponsorship">Sponsorship</option>
+						<option value="Mandiri Care">Mandiri Peduli</option>
+						<option value="Olahraga">Olahraga</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="location" class="col-sm-2 col-form-label display-1 mt-2">Location</label>
+					<div class="col-sm-10 mt-3">
+						<select th:field="*{location}" class="form-control" placeholder="Location...." required>
+										<option value="">Select Location plan....</option>
+						   				<option value="Banten">Banten</option>
+									    <option value="DKI. Jakarta">DKI. Jakarta</option>
+									    <option value="DI. Yogyakarta">DI. Yogtakarta</option>
+									    <option value="Jawa Barat">Jawa Barat</option>
+									    <option value="Jawa Tengah">Jawa Tengah</option>
+									    <option value="Jawa Timur">Jawa Timur</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="plan_date" class="col-sm-2 col-form-label display-1 mt-2">Date Plan</label>
+					<div class="col-sm-10 mt-3">
+						<input type="date" th:field="*{plan_date}" class="form-control" required autocomplete="off"/>
+					</div>
+				</div>
+				<div class="modal-footer justify-content-end">
+					<button type="submit" class="btn btn-primary">Submit</button>
+				</div>
+				</div>
+		</form>
+	</div>
+</div>
+
+  </body>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</html>
